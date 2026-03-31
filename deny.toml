@@ -1,6 +1,10 @@
 [advisories]
 version = 2
 yanked = "warn"
+ignore = [
+    # paste is unmaintained but widely used, no replacement yet
+    "RUSTSEC-2024-0436",
+]
 
 [bans]
 multiple-versions = "warn"
@@ -19,6 +23,7 @@ allow = [
     "ISC",
     "Unicode-3.0",
     "Unicode-DFS-2016",
+    "Zlib",
 ]
 
 [sources]
