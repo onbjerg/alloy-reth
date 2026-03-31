@@ -1,0 +1,19 @@
+name: Changelog
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  check-changelog:
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          fetch-depth: 0
+      - uses: wevm/changelogs/check@master
