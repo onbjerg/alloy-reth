@@ -1,9 +1,9 @@
 [package]
 name = "alloy-reth"
 description = "Types and provider extensions for the reth_ Ethereum JSON-RPC namespace"
-version = "0.1.0"
+version = "0.2.0"
 edition = "2024"
-rust-version = "1.91"
+rust-version = "1.94.1"
 license = "MIT OR Apache-2.0"
 homepage = "https://github.com/onbjerg/alloy-reth"
 repository = "https://github.com/onbjerg/alloy-reth"
@@ -15,14 +15,14 @@ rustdoc-args = ["-Zunstable-options", "--generate-link-to-definition", "--show-t
 
 [dependencies]
 # alloy
-alloy-primitives = { version = "1", default-features = false, features = ["serde"] }
-alloy-rpc-types-engine = { version = "1", default-features = false, features = ["serde"] }
-alloy-eips = { version = "1", default-features = false }
+alloy-primitives = { version = "1.6.0", default-features = false, features = ["serde"] }
+alloy-rpc-types-engine = { version = "2.4.1", default-features = false, features = ["serde"] }
+alloy-eips = { version = "2.4.1", default-features = false }
 
 # provider
-alloy-network = { version = "1", default-features = false, optional = true }
-alloy-provider = { version = "1", default-features = false, optional = true }
-alloy-transport = { version = "1", default-features = false, optional = true }
+alloy-network = { version = "2.4.1", default-features = false, optional = true }
+alloy-provider = { version = "2.4.1", default-features = false, optional = true }
+alloy-transport = { version = "2.4.1", default-features = false, optional = true }
 
 # serde
 serde = { version = "1", default-features = false, features = ["derive"] }
@@ -30,6 +30,12 @@ serde_json = { version = "1", default-features = false }
 
 # misc
 async-trait = { version = "0.1", optional = true }
+
+[dev-dependencies]
+alloy-json-rpc = { version = "2.4.1", default-features = false }
+alloy-rpc-client = { version = "2.4.1", default-features = false }
+tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
+tower = "0.5"
 
 [features]
 default = ["std", "provider"]

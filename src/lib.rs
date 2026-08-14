@@ -5,8 +5,8 @@
 /// Types for the `reth_` RPC namespace.
 pub mod types;
 pub use types::{
-    BalanceChangesInBlock, CanonStateNotification, GetBlockExecutionOutcomeParams,
-    RethNewPayloadInput, RethNewPayloadParams, RethPayloadStatus,
+    BalanceChangesInBlock, BigBlockData, CanonStateNotification, GetBlockExecutionOutcomeParams,
+    RethBigBlockData, RethNewPayloadInput, RethNewPayloadParams, RethPayloadStatus,
 };
 
 /// Provider extension for the `reth_` RPC namespace.
